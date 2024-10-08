@@ -1,1 +1,6 @@
+# Virtual environment
+.venv/
 .env
+
+# Streamlit secrets
+.streamlit/secrets.toml

@@ -24,10 +24,12 @@ with col1:
 with col2:
     st.title("Q&A Model by Rida Naz")
 
-# Add a gap after the title using st.markdown with CSS styling
-st.markdown("<div style='margin-bottom: 80px;'></div>", unsafe_allow_html=True)  # You can adjust the `margin-bottom` value as needed
+st.markdown("<h4 style='text-align: center;'>National Policy Framework on Human Rights 2022-2027</h4>", unsafe_allow_html=True)
 
-llm=ChatGroq(groq_api_key=groq_api_key, model_name="Gemma-7b-it")
+# Add a gap after the title using st.markdown with CSS styling
+st.markdown("<div style='margin-bottom: 60px;'></div>", unsafe_allow_html=True)  # You can adjust the `margin-bottom` value as needed
+
+llm=ChatGroq(groq_api_key=groq_api_key, model_name="Gemma2-9b-it")
 
 prompt=ChatPromptTemplate.from_template(
 """

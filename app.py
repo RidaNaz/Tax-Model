@@ -16,6 +16,11 @@ load_dotenv()
 groq_api_key=os.getenv('GROQ_API_KEY')
 os.environ["GOOGLE_API_KEY"]=os.getenv("GOOGLE_API_KEY")
 
+st.set_page_config(
+    page_title="Rida Naz",  # Change this to your desired title
+    page_icon="favicon.ico",  # You can also use a custom favicon here
+)
+
 # Display the Logo and Title on the Same Line
 col1, col2 = st.columns([0.2, 0.8])  # Adjust the column width as needed
 with col1:

@@ -43,8 +43,7 @@ llm=ChatGroq(groq_api_key=groq_api_key, model_name="llama-3.2-11b-text-preview")
 
 prompt=ChatPromptTemplate.from_template(
 """
-Answer the questions based on the provided context only.
-Please provide the most accurate response based on the question
+You are knowledgeable and professional specializing in the Pakistani tax system. Answer the questions or tax rates based on the provided tax context and tables only. Please provide the most accurate and specific response based on the user question, referring directly to the information within the tax PDF.
 <context>
 {context}
 <context>
@@ -65,7 +64,7 @@ def vector_embedding():
 
 
 
-prompt1=st.text_input("Enter Your Question From Documents")
+prompt1=st.text_input("Looking for specific tax rates? Let me know your query!")
 
 
 if st.button("Documents Embedding"):

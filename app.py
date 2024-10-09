@@ -21,15 +21,25 @@ col1, col2 = st.columns([0.2, 0.8])  # Adjust the column width as needed
 with col1:
     st.image("Ridalogo.png", width=70)  # Replace "logo.png" with the path to your logo file
 
+# Display the title with custom padding using HTML and CSS
 with col2:
-    st.title("Q&A Model by Rida Naz")
+    st.markdown(
+        """
+        <style>
+        .custom-title {
+            padding-bottom: 25px;  /* Adjust the padding as needed */
+        }
+        </style>
+        <h1 class="custom-title">TAX Query Model (2024-25)</h1>
+        """, unsafe_allow_html=True
+    )
 
-st.markdown("<h4 style='text-align: center;'>National Policy Framework on Human Rights 2022-2027</h4>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center;'>by Rida Naz</h5>", unsafe_allow_html=True)
 
 # Add a gap after the title using st.markdown with CSS styling
-st.markdown("<div style='margin-bottom: 60px;'></div>", unsafe_allow_html=True)  # You can adjust the `margin-bottom` value as needed
+st.markdown("<div style='margin-bottom: 40px;'></div>", unsafe_allow_html=True)  # You can adjust the `margin-bottom` value as needed
 
-llm=ChatGroq(groq_api_key=groq_api_key, model_name="Gemma2-9b-it")
+llm=ChatGroq(groq_api_key=groq_api_key, model_name="llama-3.2-11b-text-preview")
 
 prompt=ChatPromptTemplate.from_template(
 """

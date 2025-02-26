@@ -99,13 +99,12 @@ def vector_embedding():
             st.session_state.final_documents = st.session_state.text_splitter.split_documents(st.session_state.docs)
             st.session_state.vectors = FAISS.from_documents(st.session_state.final_documents, st.session_state.embeddings)
         st.success("Vector embeddings created successfully!")
+        
+# Automatically generate embeddings when the app starts
+vector_embedding()
 
 # User input for tax query
 prompt1 = st.text_input("Looking for specific tax rates? Let me know your query!", placeholder="Enter your tax query here...")
-
-# Button to trigger document embedding
-if st.button("Generate Document Embeddings"):
-    vector_embedding()
 
 # Process the query
 if prompt1:
@@ -126,3 +125,9 @@ if prompt1:
                 for i, doc in enumerate(response["context"]):
                     st.write(doc.page_content)
                     st.write("--------------------------------")
+                    
+                    
+# Reset button to clear session state
+if st.button("Reset App"):
+    st.session_state.clear()
+    st.rerun()

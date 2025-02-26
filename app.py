@@ -67,9 +67,9 @@ with col1:
     st.image("favicon.ico", width=50)
 
 with col2:
-    st.markdown("<h1 class='custom-title'>TAX Query Model (2024-25)</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='margin-top: -20px;' class='custom-title'>TAX Query Model (2024-25)</h1>", unsafe_allow_html=True)
 
-st.markdown("<h5 class='custom-subtitle'>by Rida Naz</h5>", unsafe_allow_html=True)
+st.markdown("<h5 style='margin-top: -15px;' class='custom-subtitle'>by Rida Naz</h5>", unsafe_allow_html=True)
 
 # Add a gap after the title
 st.markdown("<div style='margin-bottom: 40px;'></div>", unsafe_allow_html=True)
@@ -126,8 +126,3 @@ if prompt1:
                     st.write(doc.page_content)
                     st.write("--------------------------------")
                     
-                    
-# Reset button to clear session state
-if st.button("Reset App"):
-    st.session_state.clear()
-    st.rerun()

@@ -24,7 +24,7 @@ st.set_page_config(
 # Display the Logo and Title on the Same Line
 col1, col2 = st.columns([0.2, 0.8])  # Adjust the column width as needed
 with col1:
-    st.image("Ridalogo.png", width=70)  # Replace "logo.png" with the path to your logo file
+    st.image("favicon.ico", width=50)  # Replace "logo.png" with the path to your logo file
 
 # Display the title with custom padding using HTML and CSS
 with col2:
@@ -32,7 +32,7 @@ with col2:
         """
         <style>
         .custom-title {
-            padding-bottom: 25px;  /* Adjust the padding as needed */
+            padding-bottom: 10px;  /* Adjust the padding as needed */
         }
         </style>
         <h1 class="custom-title">TAX Query Model (2024-25)</h1>
@@ -44,7 +44,7 @@ st.markdown("<h5 style='text-align: center;'>by Rida Naz</h5>", unsafe_allow_htm
 # Add a gap after the title using st.markdown with CSS styling
 st.markdown("<div style='margin-bottom: 40px;'></div>", unsafe_allow_html=True)  # You can adjust the `margin-bottom` value as needed
 
-llm=ChatGroq(groq_api_key=groq_api_key, model_name="llama-3.2-11b-text-preview")
+llm=ChatGroq(groq_api_key=groq_api_key, model_name="llama-3.3-70b-versatile")
 
 prompt=ChatPromptTemplate.from_template(
 """
